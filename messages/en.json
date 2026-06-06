@@ -1,0 +1,192 @@
+{
+  "Common": {
+    "selectPeriod": "Select a period",
+    "filter": {
+      "apply": "Apply filters",
+      "clear": "Clear",
+      "period": "Period",
+      "transactionType": "Type",
+      "allTypes": "All types",
+      "order": "Order",
+      "orderPlaceholder": "Ex: 2024-001",
+      "material": "Material",
+      "allMaterials": "All materials",
+      "finish": "Finish",
+      "allFinishes": "All finishes",
+      "thickness": "Thickness",
+      "allThicknesses": "All thicknesses",
+      "orderNumber": "Order Number",
+      "allOperators": "All operators",
+      "allCategories": "All categories",
+      "title": "Filters",
+      "search": "Search...",
+      "allocation": "Allocation",
+      "deallocation": "Deallocation",
+      "consumption": "Consumption",
+      "in": "In (IN)",
+      "out": "Out (OUT)",
+      "adjustment": "Adjustment",
+      "allStatuses": "All statuses",
+      "active": "Active",
+      "inactive": "Inactive",
+      "status": "Status",
+      "all": "All",
+      "start": "Start",
+      "end": "End",
+      "reset": "Reset"
+    },
+    "DataTable": {
+      "empty": "No data available.",
+      "search": "Search...",
+      "loading": "Loading data...",
+      "resultCount": "Showing {count} of {total} results",
+      "showingRange": "Showing {start} to {end} of {total} entries",
+      "rowsPerPage": "Rows per page",
+      "pageOf": "Page {page} of {total}"
+    },
+    "Actions": {
+      "add": "Add",
+      "delete": "Delete",
+      "duplicate": "Duplicate",
+      "cancel": "Cancel",
+      "save": "Save",
+      "edit": "Edit",
+      "close": "Close"
+    }
+  },
+  "HomePage": {
+    "title": "Welcome",
+    "description": ""
+  },
+  "Navigation": {
+    "overview": "Overview",
+    "administration": "Administration",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "settings": "Settings",
+    "profile": "My Profile"
+  },
+  "Header": {
+    "title": "Dashboard",
+    "search": "Search...",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all read",
+    "noNotifications": "No notifications",
+    "loading": "Loading...",
+    "testMode": "Test Mode",
+    "testModeTitle": "Production Version",
+    "testModeDescription": "You are currently in the test environment. Would you like to switch to the production version?",
+    "goToProduction": "Go to Production"
+  },
+  "Profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your personal information",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "role": "Role",
+    "memberSince": "Member since",
+    "save": "Save",
+    "saving": "Saving...",
+    "saveSuccess": "Profile updated successfully"
+  },
+  "Auth": {
+    "signInToYourAccount": "Sign in to your account",
+    "signInWithMicrosoft": "Sign in with Microsoft",
+    "orContinueWith": "or continue with",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in..."
+  },
+  "Admin": {
+    "Settings": {
+      "title": "System Settings",
+      "subtitle": "Configure global application options",
+      "general": "General",
+      "security": "Security",
+      "notifications": "Notifications",
+      "comingSoon": "This section will be available soon."
+    },
+    "Users": {
+      "title": "Users",
+      "subtitle": "Manage user access and roles",
+      "addUser": "Add User",
+      "createExternalUserNote": "Create a new external user account. They will receive an email confirmation.",
+      "editSubtitle": "Update user information and permissions.",
+      "emailImmutable": "Email cannot be changed",
+      "fields": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "role": "Role",
+        "type": "Type",
+        "provider": "Method",
+        "phoneOptional": "Phone (Optional)"
+      },
+      "providers": {
+        "email": "Email",
+        "azure": "Microsoft",
+        "microsoft": "Microsoft"
+      },
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john@example.com",
+        "phone": "514-555-1234"
+      },
+      "roles": {
+        "USER": "User",
+        "ADMIN": "Administrator"
+      },
+      "actions": {
+        "create": "Create User",
+        "creating": "Creating...",
+        "edit": "Edit User",
+        "save": "Save Changes",
+        "cancel": "Cancel"
+      },
+      "validation": {
+        "firstNameRequired": "First name is required",
+        "lastNameRequired": "Last name is required",
+        "emailInvalid": "Invalid email address",
+        "passwordLength": "Password must be at least 8 characters"
+      },
+      "passwordHelp": "Password for external users",
+      "failedToLoad": "Failed to load users",
+      "loadingUsers": "Loading users...",
+      "searchPlaceholder": "Search by name, email, role...",
+      "noUsersFound": "No users found.",
+      "resetPassword": "Reset Password",
+      "resetPasswordTitle": "Reset Password",
+      "resetPasswordDescription": "This will generate a new password for {name}. The old password will no longer work.",
+      "resetPasswordConfirm": "Generate Password",
+      "resetPasswordSuccess": "Password successfully reset!",
+      "generatedPasswordLabel": "New Password:",
+      "copyPassword": "Copy",
+      "selfResetError": "You cannot reset your own password",
+      "confirmResetAction": "This action is immediate and irreversible.",
+      "passwordWarning": "Please note this password down, it will not be shown again.",
+      "deleteUser": "Delete User",
+      "deleteUserTitle": "Delete User",
+      "deleteUserDescription": "Are you sure you want to delete {name}? Their account will be deactivated and they will no longer be able to log in. This action can be reversed.",
+      "deleteUserConfirm": "Delete User",
+      "deleteSuccess": "User successfully deleted",
+      "restoreUser": "Restore User",
+      "restoreSuccess": "User successfully restored",
+      "deleted": "Deleted",
+      "showDeleted": "Show deleted",
+      "hideDeleted": "Hide deleted",
+      "selfDeleteError": "You cannot delete your own account"
+    }
+  },
+  "Errors": {
+    "notFound": "Page not found",
+    "notFoundDescription": "The page you are looking for does not exist or has been moved.",
+    "serverError": "Server error",
+    "serverErrorDescription": "An unexpected error occurred. Please try again.",
+    "backHome": "Back to home",
+    "tryAgain": "Try again"
+  }
+}

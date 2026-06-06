@@ -1,0 +1,36 @@
+# For detailed configuration reference documentation, visit:
+# https://supabase.com/docs/guides/local-development/cli/config
+project_id = "app-metier"
+
+[auth.external.azure]
+# Activer seulement après avoir configuré les valeurs privées dans Supabase/Azure.
+enabled = false
+client_id = "<azure-client-id>"
+secret = "<azure-client-secret>"
+url = "https://login.microsoftonline.com/<azure-tenant-id>/"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[functions.notify-project-managers]
+verify_jwt = false
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.transition-order-status]
+verify_jwt = false
+
+[functions.check-stock-thresholds]
+verify_jwt = false
+
+[functions.update-milestone]
+verify_jwt = false
+
+[functions.split-order]
+verify_jwt = false
+
+[functions.cancel-split]
+verify_jwt = false

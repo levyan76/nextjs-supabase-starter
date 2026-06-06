@@ -1,0 +1,170 @@
+{
+  "Common": {
+    "filter": {
+      "apply": "Appliquer les filtres",
+      "clear": "Effacer",
+      "title": "Filtres",
+      "search": "Rechercher...",
+      "allStatuses": "Tous les statuts",
+      "active": "Actif",
+      "inactive": "Inactif",
+      "status": "Statut",
+      "all": "Tout",
+      "start": "Début",
+      "end": "Fin",
+      "reset": "Réinitialiser"
+    },
+    "DataTable": {
+      "empty": "Aucune donnée disponible.",
+      "search": "Rechercher...",
+      "loading": "Chargement des données...",
+      "resultCount": "Affichage de {count} sur {total} résultats",
+      "showingRange": "Affichage de {start} à {end} sur {total} entrées",
+      "rowsPerPage": "Lignes par page",
+      "pageOf": "Page {page} sur {total}"
+    },
+    "Actions": {
+      "add": "Ajouter",
+      "delete": "Supprimer",
+      "duplicate": "Dupliquer",
+      "cancel": "Annuler",
+      "save": "Sauvegarder",
+      "edit": "Modifier",
+      "close": "Fermer"
+    }
+  },
+  "HomePage": {
+    "title": "Bienvenue",
+    "description": ""
+  },
+  "Navigation": {
+    "overview": "Vue d'ensemble",
+    "administration": "Administration",
+    "dashboard": "Tableau de bord",
+    "users": "Utilisateurs",
+    "settings": "Paramètres",
+    "profile": "Mon profil"
+  },
+  "Header": {
+    "title": "Tableau de bord",
+    "search": "Rechercher...",
+    "notifications": "Notifications",
+    "markAllRead": "Tout marquer lu",
+    "noNotifications": "Aucune notification",
+    "loading": "Chargement...",
+    "testMode": "Mode Test",
+    "testModeTitle": "Version de Production",
+    "testModeDescription": "Vous êtes actuellement dans l'environnement de test. Souhaitez-vous passer à la version de production ?",
+    "goToProduction": "Aller en production"
+  },
+  "Auth": {
+    "signInToYourAccount": "Connectez-vous à votre compte",
+    "signInWithMicrosoft": "Se connecter avec Microsoft",
+    "orContinueWith": "ou continuer avec",
+    "email": "Courriel",
+    "password": "Mot de passe",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion en cours..."
+  },
+  "Profile": {
+    "title": "Mon profil",
+    "subtitle": "Gérer vos informations personnelles",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Courriel",
+    "role": "Rôle",
+    "memberSince": "Membre depuis",
+    "save": "Sauvegarder",
+    "saving": "Sauvegarde...",
+    "saveSuccess": "Profil mis à jour avec succès"
+  },
+  "Admin": {
+    "Settings": {
+      "title": "Paramètres du système",
+      "subtitle": "Configurer les options globales de l'application",
+      "general": "Général",
+      "security": "Sécurité",
+      "notifications": "Notifications",
+      "comingSoon": "Cette section sera disponible prochainement."
+    },
+    "Users": {
+      "title": "Utilisateurs",
+      "subtitle": "Gérer les accès et les rôles",
+      "addUser": "Ajouter un utilisateur",
+      "createExternalUserNote": "Créer un nouveau compte utilisateur externe. Il recevra une confirmation par courriel.",
+      "editSubtitle": "Mettre à jour les informations et les permissions de l'utilisateur.",
+      "emailImmutable": "L'adresse courriel ne peut pas être modifiée",
+      "fields": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Courriel",
+        "password": "Mot de passe",
+        "role": "Rôle",
+        "type": "Type",
+        "provider": "Méthode",
+        "phoneOptional": "Téléphone (Optionnel)"
+      },
+      "providers": {
+        "email": "Courriel",
+        "azure": "Microsoft",
+        "microsoft": "Microsoft"
+      },
+      "placeholders": {
+        "firstName": "Jean",
+        "lastName": "Dupont",
+        "email": "jean@exemple.com"
+      },
+      "roles": {
+        "USER": "Utilisateur",
+        "ADMIN": "Administrateur"
+      },
+      "actions": {
+        "create": "Créer l'utilisateur",
+        "creating": "Création...",
+        "edit": "Modifier l'utilisateur",
+        "save": "Sauvegarder",
+        "cancel": "Annuler"
+      },
+      "validation": {
+        "firstNameRequired": "Le prénom est requis",
+        "lastNameRequired": "Le nom est requis",
+        "emailInvalid": "Adresse courriel invalide",
+        "passwordLength": "Le mot de passe doit contenir au moins 8 caractères"
+      },
+      "passwordHelp": "Mot de passe pour les utilisateurs externes",
+      "failedToLoad": "Échec du chargement des utilisateurs",
+      "loadingUsers": "Chargement des utilisateurs...",
+      "searchPlaceholder": "Rechercher par nom, courriel, rôle...",
+      "noUsersFound": "Aucun utilisateur trouvé.",
+      "resetPassword": "Réinitialiser le mot de passe",
+      "resetPasswordTitle": "Réinitialiser le mot de passe",
+      "resetPasswordDescription": "Cela va générer un nouveau mot de passe pour {name}. L'ancien mot de passe ne fonctionnera plus.",
+      "resetPasswordConfirm": "Générer le mot de passe",
+      "resetPasswordSuccess": "Le mot de passe a été réinitialisé avec succès !",
+      "generatedPasswordLabel": "Nouveau mot de passe :",
+      "copyPassword": "Copier",
+      "selfResetError": "Vous ne pouvez pas réinitialiser votre propre mot de passe",
+      "confirmResetAction": "Cette action est immédiate et irréversible.",
+      "passwordWarning": "Veuillez noter ce mot de passe, il ne sera plus affiché.",
+      "deleteUser": "Supprimer l'utilisateur",
+      "deleteUserTitle": "Supprimer l'utilisateur",
+      "deleteUserDescription": "Êtes-vous sûr de vouloir supprimer {name} ? Son compte sera désactivé et il ne pourra plus se connecter. Cette action est réversible.",
+      "deleteUserConfirm": "Supprimer",
+      "deleteSuccess": "Utilisateur supprimé avec succès",
+      "restoreUser": "Restaurer l'utilisateur",
+      "restoreSuccess": "Utilisateur restauré avec succès",
+      "deleted": "Supprimé",
+      "showDeleted": "Afficher les supprimés",
+      "hideDeleted": "Masquer les supprimés",
+      "selfDeleteError": "Vous ne pouvez pas supprimer votre propre compte"
+    }
+  },
+  "Errors": {
+    "notFound": "Page introuvable",
+    "notFoundDescription": "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "serverError": "Erreur serveur",
+    "serverErrorDescription": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "backHome": "Retour à l'accueil",
+    "tryAgain": "Réessayer"
+  }
+}

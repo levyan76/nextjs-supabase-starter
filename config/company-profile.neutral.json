@@ -1,0 +1,53 @@
+﻿{
+  "appName": "Application métier",
+  "company": {
+    "legalName": "Organisation",
+    "displayName": "Organisation",
+    "industry": "Construction / fabrication / services professionnels",
+    "website": "https://example.com",
+    "timezone": "America/Toronto",
+    "address": {
+      "line1": "Adresse à compléter",
+      "line2": "",
+      "city": "Ville",
+      "province": "QC",
+      "postalCode": "A1A 1A1",
+      "country": "Canada"
+    }
+  },
+  "contacts": {
+    "general": {
+      "label": "Accueil",
+      "name": "Service général",
+      "email": "contact@example.com",
+      "phone": "000-000-0000"
+    },
+    "support": {
+      "label": "Support application",
+      "name": "Support technique",
+      "email": "support@example.com",
+      "phone": "000-000-0000"
+    },
+    "billing": {
+      "label": "Facturation",
+      "name": "Service comptabilité",
+      "email": "facturation@example.com",
+      "phone": "000-000-0000"
+    }
+  },
+  "auth": {
+    "internalEmailDomains": ["entreprise.example"],
+    "partnerEmailDomains": ["partenaire.example"]
+  },
+  "branding": {
+    "primaryColor": "#009639",
+    "secondaryColor": "#000000",
+    "fontFamily": "Raleway, Arial, sans-serif",
+    "logoPath": "/logo-trimpro360.png"
+  },
+  "notes": [
+    "Ce fichier ne contient aucune donnée personnelle réelle.",
+    "Remplacer les valeurs example.com et 000-000-0000 par les coordonnées officielles dans un environnement privé.",
+    "Ne jamais placer de clé service_role, secret Azure, mot de passe ou jeton réel dans ce fichier."
+  ]
+}

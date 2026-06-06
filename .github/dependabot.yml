@@ -1,0 +1,55 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: America/Toronto
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore
+      include: scope
+    groups:
+      radix:
+        patterns: ["@radix-ui/*"]
+      tanstack:
+        patterns: ["@tanstack/*"]
+      testing:
+        patterns:
+          - "@testing-library/*"
+          - vitest
+          - "@vitest/*"
+          - "@playwright/*"
+          - playwright
+          - jsdom
+      tailwind:
+        patterns:
+          - tailwindcss
+          - "@tailwindcss/*"
+          - tw-animate-css
+          - prettier-plugin-tailwindcss
+      dnd-kit:
+        patterns: ["@dnd-kit/*"]
+      types:
+        patterns: ["@types/*"]
+    ignore:
+      # Next.js + React bumps via PR manuelle (breaking changes potentiels)
+      - dependency-name: next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react-dom
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: America/Toronto
+    commit-message:
+      prefix: chore
+      include: scope
