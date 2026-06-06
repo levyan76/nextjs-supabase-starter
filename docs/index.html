@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nextjs-supabase-starter — Production-grade Next.js 16 + Supabase starter</title>
+    <meta
+      name="description"
+      content="Production-grade Next.js 16 + Supabase starter with auth, RLS, i18n (FR/EN), rate limiting, feature flags, Vitest + Playwright, GitHub Actions CI, Docker. MIT license. Ship from day 1."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="nextjs-supabase-starter" />
+    <meta
+      property="og:description"
+      content="Production-grade Next.js 16 + Supabase starter. Auth, RLS, i18n, tests, CI, Docker. MIT. Ship from day 1."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://levyan76.github.io/nextjs-supabase-starter/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="nextjs-supabase-starter" />
+    <meta
+      name="twitter:description"
+      content="Production-grade Next.js 16 + Supabase starter. Auth, RLS, i18n, tests, CI, Docker. MIT. Ship from day 1."
+    />
+
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --bg-2: #111;
+        --fg: #e5e5e5;
+        --muted: #888;
+        --accent: #3ecf8e;
+        --accent-2: #2563eb;
+        --border: #1f1f1f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      header {
+        padding: 5rem 0 3rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+      }
+      header h1 {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        margin: 0 0 1rem;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      header p.tagline {
+        font-size: 1.25rem;
+        color: var(--muted);
+        max-width: 640px;
+        margin: 0 auto 2rem;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .badges img {
+        height: 22px;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.15s;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #000;
+      }
+      .btn-primary:hover {
+        background: #4dd99a;
+        text-decoration: none;
+      }
+      .btn-secondary {
+        background: var(--bg-2);
+        color: var(--fg);
+        border: 1px solid var(--border);
+      }
+      .btn-secondary:hover {
+        background: #1a1a1a;
+        text-decoration: none;
+      }
+      section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      section h2 {
+        font-size: 1.875rem;
+        margin: 0 0 2rem;
+        letter-spacing: -0.01em;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+      }
+      .card {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.5rem;
+      }
+      .card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.05rem;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      pre {
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 1.25rem;
+        overflow-x: auto;
+        font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      code {
+        background: var(--bg-2);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+        font-size: 0.9em;
+      }
+      pre code {
+        background: none;
+        padding: 0;
+      }
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 0.5rem 2rem;
+        font-size: 0.95rem;
+      }
+      .stack-grid div {
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .stack-grid strong {
+        color: var(--accent);
+        margin-right: 0.5rem;
+      }
+      footer {
+        padding: 3rem 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      footer a {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>nextjs-supabase-starter</h1>
+        <p class="tagline">
+          Production-grade Next.js 16 + Supabase starter. Auth, RLS, i18n, rate limiting,
+          tests, CI, Docker — all wired up. Ship from day 1.
+        </p>
+        <div class="badges">
+          <a href="https://github.com/levyan76/nextjs-supabase-starter/actions/workflows/ci.yml">
+            <img
+              src="https://github.com/levyan76/nextjs-supabase-starter/actions/workflows/ci.yml/badge.svg"
+              alt="CI"
+            />
+          </a>
+          <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" />
+          <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js 16" />
+          <img src="https://img.shields.io/badge/React-19.2-61dafb?logo=react" alt="React 19" />
+          <img src="https://img.shields.io/badge/Supabase-2.99-3ecf8e?logo=supabase" alt="Supabase" />
+          <img src="https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript" alt="TS" />
+          <img src="https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwind-css" alt="Tailwind" />
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://github.com/new?template_name=nextjs-supabase-starter&template_owner=levyan76">
+            Use this template →
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/levyan76/nextjs-supabase-starter">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <h2>Why this starter</h2>
+        <p style="color: var(--muted); margin-top: -1rem">
+          Most "Next.js + Supabase" boilerplates give you auth and stop there. This one ships with
+          the boring-but-critical plumbing every real app needs — so you can focus on what makes
+          yours different.
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>🔐 Auth + RLS</h3>
+            <p>
+              Email + Microsoft SSO. Role-based access via JWT <code>app_metadata</code> synced
+              server-side. Non-spoofable client-side.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🌍 i18n out of the box</h3>
+            <p>
+              next-intl with FR/EN routing, locale switcher, and all generic UI keys already
+              translated.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🚦 Rate limiting</h3>
+            <p>
+              Sliding window per IP and route. In-memory by default, Upstash-ready for serverless.
+              RFC-compliant headers.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🚩 Feature flags</h3>
+            <p>
+              DB-backed flags with a React hook. Toggle features without redeploying. Audit-friendly.
+            </p>
+          </div>
+          <div class="card">
+            <h3>📊 Structured logging</h3>
+            <p>
+              JSON in production, colored in dev. Named events. Parseable by Datadog, Vercel Log
+              Drain, etc.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🧪 67 tests + E2E</h3>
+            <p>
+              Vitest unit suite + Playwright E2E. All green on day 1. Tests for the middleware
+              included.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🛡️ Security headers</h3>
+            <p>
+              CSP env-aware (strict in prod), HSTS, X-Frame-Options, Referrer-Policy,
+              Permissions-Policy. Open-redirect protection.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🤖 CI / Docker / Dependabot</h3>
+            <p>
+              GitHub Actions (lint + typecheck + test + build + E2E). Multi-stage Docker
+              (node 22-alpine). Weekly grouped dep bumps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Quick start</h2>
+        <pre><code># Option 1 — Click "Use this template" on GitHub.
+
+# Option 2 — Clone manually
+git clone https://github.com/levyan76/nextjs-supabase-starter.git my-app
+cd my-app
+rm -rf .git &amp;&amp; git init -b main
+
+cp .env.local.example .env.local
+# Edit .env.local — at minimum: NEXT_PUBLIC_APP_NAME, Supabase URL + keys
+
+npm install
+
+# Local Supabase (requires Docker)
+npx supabase start
+npx supabase db reset
+
+npm run dev
+# → http://localhost:3000
+# Set up the first admin at: http://localhost:3000/setup</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Stack</h2>
+        <div class="stack-grid">
+          <div><strong>Framework</strong> Next.js 16</div>
+          <div><strong>Runtime</strong> React 19.2</div>
+          <div><strong>Styles</strong> Tailwind 4</div>
+          <div><strong>UI kit</strong> shadcn/ui</div>
+          <div><strong>Auth + DB</strong> Supabase</div>
+          <div><strong>i18n</strong> next-intl (FR/EN)</div>
+          <div><strong>Forms</strong> RHF + zod 4</div>
+          <div><strong>Data</strong> TanStack Query</div>
+          <div><strong>PDF</strong> @react-pdf/renderer</div>
+          <div><strong>Charts</strong> Recharts</div>
+          <div><strong>Tests</strong> Vitest + Playwright</div>
+          <div><strong>Lint</strong> ESLint 9 + Prettier</div>
+          <div><strong>Pre-commit</strong> Husky + lint-staged</div>
+          <div><strong>CI</strong> GitHub Actions</div>
+          <div><strong>Container</strong> Docker (node 22)</div>
+          <div><strong>License</strong> MIT</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>Security posture</h2>
+        <ul style="color: var(--muted); margin: 0; padding-left: 1.25rem">
+          <li>RLS active on every table.</li>
+          <li>JWT <code>role</code> synced server-side via Postgres trigger — non-spoofable.</li>
+          <li>Service-role key server-only. Never shipped to the browser.</li>
+          <li>CSP strict in production, dev-friendly in dev.</li>
+          <li>Rate limiting per IP and per route. Sliding window. Memory or Upstash.</li>
+          <li>Open-redirect protection on the <code>?redirect=</code> parameter.</li>
+          <li>Password policy (min 8 chars, upper, digit, special).</li>
+          <li><code>/setup</code> route is idempotent — blocked after the first admin is created.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        Built by <a href="https://github.com/levyan76">Yan Levasseur</a>. MIT licensed.
+        <br />
+        <a href="https://github.com/levyan76/nextjs-supabase-starter">GitHub</a>
+        ·
+        <a href="https://github.com/levyan76/nextjs-supabase-starter/blob/main/README.fr.md">
+          Français
+        </a>
+        ·
+        <a href="https://github.com/levyan76/nextjs-supabase-starter/blob/main/CHANGELOG.md">
+          Changelog
+        </a>
+        ·
+        <a href="https://github.com/levyan76/nextjs-supabase-starter/blob/main/CONTRIBUTING.md">
+          Contributing
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

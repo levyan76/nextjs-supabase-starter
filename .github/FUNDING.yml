@@ -1,0 +1,11 @@
+# These are supported funding model platforms
+# Yan: enable each platform you want active.
+# - GitHub Sponsors: enable on https://github.com/sponsors first, then uncomment.
+# - Buy Me a Coffee / Ko-fi: create an account and uncomment the matching line.
+# - Polar.sh: great for OSS monetization (sponsors + product sales).
+
+# github: [levyan76]
+# ko_fi: levyan76
+# buy_me_a_coffee: levyan76
+# polar: levyan76
+custom: ["https://github.com/levyan76"]
